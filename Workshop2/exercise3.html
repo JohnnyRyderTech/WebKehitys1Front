@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 3 – Browser Redirect</title>
+
+  <script>
+    window.onload = function () {
+
+      const userAgent = navigator.userAgent.toLowerCase();
+
+      // Detect Firefox (Mozilla browser)
+      const isMozilla = userAgent.includes("firefox");
+
+      if (isMozilla) {
+        // Redirect to Mozilla
+        window.location.href = "https://www.mozilla.org";
+      } else {
+        // Redirect to Google
+        window.location.href = "https://www.google.com";
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <p>Checking browser... redirecting automatically.</p>
+</body>
+</html>

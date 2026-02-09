@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 4 – Student Check</title>
+
+  <script>
+    window.onload = function () {
+
+      // Show confirm dialog
+      const isStudent = confirm("Are you a student?");
+
+      // Select page body
+      const body = document.body;
+
+      if (isStudent) {
+        body.innerHTML = "<h2>Welcome student</h2>";
+      } else {
+        body.innerHTML = "<h2>Sorry, this page is for students only</h2>";
+      }
+
+    };
+  </script>
+</head>
+
+<body>
+  <p>Loading...</p>
+</body>
+</html>

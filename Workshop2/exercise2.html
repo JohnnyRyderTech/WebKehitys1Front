@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 2</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    #output div {
+      margin: 2px 0;
+    }
+  </style>
+
+  <script>
+    function repeatingText() {
+      const output = document.getElementById("output");
+
+      // clear old content if clicked multiple times
+      output.innerHTML = "";
+
+      for (let i = 1; i <= 50; i++) {
+        const line = document.createElement("div");
+        line.textContent = i + ". This line is repeated";
+        output.appendChild(line);
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <h1>Exercise 2</h1>
+
+  <button onclick="repeatingText()">Run Exercise</button>
+
+  <div id="output"></div>
+
+</body>
+</html>

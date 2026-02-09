@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 5</title>
+
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 25px;
+  }
+
+  #imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+  }
+</style>
+
+
+  <script>
+    const images = [
+      "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+      "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+      "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"
+    ];
+
+    function showRandomImage() {
+      const img = document.getElementById("randomImage");
+
+      const randomIndex = Math.floor(Math.random() * images.length);
+
+      img.src = images[randomIndex];
+      img.style.display = "block";
+    }
+  </script>
+</head>
+
+<body>
+
+  <h1>Exercise 5</h1>
+
+  <button onclick="showRandomImage()">Show Random Image</button>
+
+  <div id="imageContainer">
+    <img id="randomImage" alt="Random image">
+  </div>
+
+</body>
+</html>
