@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 1</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    let quoteWindow = null;
+
+    function openQuote() {
+      quoteWindow = window.open(
+        "lincoln.html",
+        "quoteWindow",
+        "width=600,height=400"
+      );
+    }
+
+    function closeQuote() {
+      if (quoteWindow && !quoteWindow.closed) {
+        quoteWindow.close();
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <h1>Exercise 1</h1>
+
+  <button onclick="openQuote()">Open Quote Window</button>
+  <button onclick="closeQuote()">Close Quote Window</button>
+
+</body>
+</html>
