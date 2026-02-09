@@ -1,0 +1,43 @@
+<h2>Random Numbers</h2>
+<ul id="numbers"></ul>
+
+<script>
+var arr = [];
+var list = document.getElementById("numbers");
+
+for (var i = 0; i < 15; i++) {
+
+    var num = Math.floor(Math.random() * 100) + 1;
+
+    arr.push(num);
+
+    console.log("Generated:", num);
+
+    document.write("<p><strong>Number " + (i + 1) + ":</strong> " + num + "</p>");
+}
+
+console.log("All numbers:", arr);
+</script>
+
+// Returns true if age is over 18, otherwise returns false
+function areYouOldEnough(age) {
+
+    var result;
+
+    if (age < 18) {
+        result = false;
+    } else {
+        result = true;
+    }
+
+    // Output to console BEFORE returning
+    console.log("Age:", age, "Old enough:", result);
+
+    return result;
+}
+
+
+// Test runs
+areYouOldEnough(15);
+areYouOldEnough(18);
+areYouOldEnough(25);
