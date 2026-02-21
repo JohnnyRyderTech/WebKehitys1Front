@@ -1,0 +1,448 @@
+<!doctype html>
+<HTML lang="en">
+	<head>
+		<title>Workshop 4</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body class="ws4">
+		<h1>Workshop 4: DOM Scripting</h1>
+		<hr />
+		<p>In this exercise we will practice the art of DOM Scripting with JavaScript. Use the lecture-material as a reference guide side by side these exercises. It might also be a good idea to save the lines of code you write during the exercises for later use. </p>
+
+		<hr/>
+		<h2>Exercise 1: Basic  DOM Manipulation</h2>
+		<p>&nbsp;Below you will see three buttons. Edit the source code and add an onClick-events to these buttons. Use Developer Console to find the </p>
+		<p>
+		  <button onclick="changeHeading();">Button 1</button>
+		  <button onclick="modifyExercise2Heading();">Button 2</button>
+		  <button onclick="appendLoremAfter4thP();">Button 3</button>
+		</p>
+
+		<ul>
+			<li>The first button should run a JavaScript-function, which will find the reference to &quot;Workshop 4&quot; heading on this page and change the contents of it to &quot;Modified Heading!&quot;. </li>
+			<li> The second button should run a function, which will modify the style of the &quot;Exercise 2&quot; heading on this page. JavaScript should change at least the font size, style and color and the background color</li>
+			<li>The third button should append the following text paragraph after the <strong>4th paragraph tag &lt;p&gt;</strong> on the page (without overwriting the current content). Change the background of the entire page as well. Note: The Lorem ipsum text should be in italics. It should also add a logo image of some sort after the text.<br>
+			<br>
+			<strong id="lorem"><em>&quot;Lorem ipsum</em></strong><em> dolor sit amet, consectetuer   adipiscing elit. Sed posuere interdum sem. Quisque ligula eros   ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam   vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget   velit. &quot;</em></li>
+		</ul>
+		<hr/>
+		<h2>Exercise 2: DOM Traversing using ID's and classes</h2>
+		<p class="surprise">Add onchange -events to following checkboxes.</p>
+		<p>
+			<label>
+				<input onchange="hide()" name="CheckboxGroup1" type="checkbox" id="CheckboxGroup1_0" title="Actions" value="1">
+				Hide me (using hide()-function in html)
+			</label>
+			<br>
+			<label>
+				<input type="checkbox" name="CheckboxGroup1" value="2" id="CheckboxGroup1_1">
+				Show me (using dynamically added event listener)
+			</label>
+			<br>
+			<label>
+				<input type="checkbox" name="CheckboxGroup1" value="3" id="CheckboxGroup1_2"> 
+				<span id="surpise">Surprise</span>
+			</label>
+		</p>
+		<ul>
+		  <li>First checkbox: Find out which element has been described with the id &quot;me&quot;. Change the visibility (display value) of the element to none. What happens?</li>
+		  <li>Second checkbox should return the visibility of the element to a normal state (block).</li>
+		  <li>Third checkbox should find the elements with class &quot;surprise&quot; and change the font size to 20.</li>
+		</ul>
+		<div id="me" class="red-box">Hide this content!</div>
+		<p>&nbsp;</p>
+		<hr/>
+		<h2>Exercise 3: Images and pulldowns</h2>
+			<ul>
+				<li>Write a JavaScript function, which will fire when the pulldown menu item is changed. Show the users choice using alert -box.</li>
+				<li>When the mouse is moved on top of the image, a colored border should appear surrounding it. On mouse out, border should disappear</li>
+				<li>When you have accomplished the above, change the image (id=&quot;carimage&quot;) below based on the users choice on the pulldown menu below. Find appropriate images from the web.
+			</ul>
+		  <p>Select a new car from the list.</p>
+		  <select name="mySelect" id="mySelect" onchange="carChanged()">
+			<option value="BMW">BMW</option>
+			<option value="Audi">Audi</option>
+			<option value="Mersu">Mersu</option>
+			<option value="Volvo">Volvo</option>
+		  </select>
+		  <br>
+		  <br>
+		<img alt="" onmouseover="" onmouseout="" style="left: 0px; opacity: 1;" src="https://commons.wikimedia.org/wiki/Special:FilePath/White%20BMW%20car%20seen%20from%20front.jpg" width="400" id="carimage"/>
+		<hr/>
+		<h2>Exercise 4: Moving things around</h2>
+		<ul>
+		  <li>
+			<p class="surprise">You can do neat things by editing CSS-rules via  JavaScript. See the examples in lecture slides. Then try these:</p>
+			<ol>
+			  <li><button onclick="changePosition()">Move!</button>Select the div with an id &quot;carimage&quot; and move it 200px left and 500px down</li>
+			  <li><button onclick="setInterval(function(){doMove();},1000); ">Animate</button> Write a  funtion doMove() which  will move the image across the screen, or even better: back and forth on  the screen. The Interval required has already been added to the onclick -event of the list item.</li>
+			  <li><button onclick="setInterval(function(){fadeOut();},250);">Fade out!</button> Wite  a function fadeOut() which will slowly decrease the opacity of the image from 1.0 to  0 making it fade out. The Interval required has already been added to the onclick -event of the list item</li>
+			  <li><button onclick="remove()">Disappear! </button>Finally, write JavaScript which will remove the image from the page</li>
+			</ol>
+			<p id="ex4status" style="margin-top:10px;font-weight:bold;"></p>
+		  </li>
+		</ul>
+		<hr/>
+		<h2>Exercise 5: Tables</h2>
+		<ul>
+		  <li class="surprise">Write a JavaScript function to  add rows to a table. Rows can contain preset values.</li>
+		  <li>When your code is working, try reading the content to be added from a set of fields below the table.</li>
+		</ul>
+		<br>
+		<table id="data" class="display">
+			<thead>
+			  <tr>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Salary</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Tiger Nixon</td>
+				<td>System Architect</td>
+				<td>$320,800</td>
+			  </tr>
+			  <tr>
+				<td>Garrett Winters</td>
+				<td>Accountant</td>
+				<td>$170,750</td>
+			  </tr>
+			  <tr>
+				<td>Ashton Cox</td>
+				<td>Junior Technical Author</td>
+				<td>$86,000</td>
+			  </tr>
+			  <tr>
+				<td>Cedric Kelly</td>
+				<td>Senior Javascript Developer</td>
+				<td>$433,060</td>
+			  </tr>
+			  <tr>
+				<td>Airi Satou</td>
+				<td>Accountant</td>
+				<td>$162,700</td>
+			  </tr>
+			</tbody>
+			<tfoot>
+			</tfoot>
+		</table>
+		<p>
+			Name
+			<label for="textfield">:</label>
+			<input type="text" name="textfield" id="textfield">
+			<br>
+			Position:
+			<input type="text" name="textfield2" id="textfield2">
+			<br>
+			Salary: 
+			<input type="text" name="textfield3" id="textfield3">
+			<br>
+			<input type="button" onclick="insertRows()" name="Insert" id="Insert" value="Insert">
+		</p>
+		<hr/>
+		<h2>Bonus exercises for the enthusiastics</h2>
+		<ul>
+			<li dir="ltr">
+				<p dir="ltr">Write a loop, which goes through all the LI tags in the page and replaces them with a &lt;strong&gt; tagged, red text saying &quot;Replaced&quot;.</p>
+			<p><button onclick="replaceAllLI()">Replace All LI</button></p>
+			<li dir="ltr">How would you replace the contents only on the ones with the word &lsquo;Select&rsquo; in them?</li>
+		</ul>
+	<script>
+		// Exercise 1 - Button 1
+		function changeHeading() {
+			// "Workshop 4" heading = the main <h1> on this page
+			const h1 = document.querySelector("h1");
+			if (h1) h1.textContent = "Modified Heading!";
+		}
+
+		// Exercise 1 - Button 2
+		function modifyExercise2Heading() {
+			// Find the <h2> that starts with "Exercise 2"
+			const headings = Array.from(document.querySelectorAll("h2"));
+			const ex2 = headings.find(h => (h.textContent || "").trim().startsWith("Exercise 2"));
+			if (!ex2) return;
+
+			ex2.style.fontSize = "36px";
+			ex2.style.fontStyle = "italic";
+			ex2.style.color = "#ffffff";
+			ex2.style.backgroundColor = "#222222";
+			ex2.style.padding = "10px 12px";
+			ex2.style.borderRadius = "8px";
+		}
+
+		// Exercise 1 - Button 3
+		function appendLoremAfter4thP() {
+			// Change the background of the entire page
+			document.body.style.backgroundColor = "#42f2f5";
+
+			const ps = document.querySelectorAll("p");
+			if (ps.length < 4) return;
+
+			const fourthP = ps[3];
+
+			// Create the italic Lorem Ipsum paragraph
+			const loremP = document.createElement("p");
+			loremP.style.fontStyle = "italic";
+			loremP.textContent =
+				"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. " +
+				"Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. " +
+				"Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit.";
+
+			// Create a simple inline "logo" (SVG data URI so it works offline)
+			const logo = document.createElement("img");
+			const svg = `
+				<svg xmlns="http://www.w3.org/2000/svg" width="220" height="70" viewBox="0 0 220 70">
+					<rect x="0" y="0" width="220" height="70" rx="12" ry="12" fill="#111"/>
+					<circle cx="40" cy="35" r="18" fill="#f4f2ee"/>
+					<path d="M30 35 L40 20 L50 35 L40 50 Z" fill="#111"/>
+					<text x="75" y="43" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#f4f2ee">
+						DOM CODE
+					</text>
+				</svg>
+			`.trim();
+			logo.src = "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+			logo.alt = "Logo";
+			logo.style.display = "block";
+			logo.style.marginTop = "10px";
+			logo.style.maxWidth = "220px";
+
+			// Insert after the 4th <p> (without overwriting anything)
+			fourthP.insertAdjacentElement("afterend", loremP);
+			loremP.insertAdjacentElement("afterend", logo);
+		}
+	
+
+		// Exercise 2
+		// First checkbox
+		function hide() {
+			const box = document.getElementById("me");
+			if (!box) return;
+			box.style.display = "none";
+		}
+
+		// Second checkbox
+		function showMe() {
+			const box = document.getElementById("me");
+			if (!box) return;
+			box.style.display = "block";
+		}
+
+		// Third checkbox
+		function surpriseOn() {
+			document.querySelectorAll(".surprise").forEach(el => {
+				el.style.fontSize = "20px";
+			});
+		}
+		function surpriseOff() {
+			document.querySelectorAll(".surprise").forEach(el => {
+				el.style.fontSize = "";
+			});
+		}
+
+		// Dynamically wire up Exercise 2 checkbox events after the DOM is ready
+		document.addEventListener("DOMContentLoaded", () => {
+			const cbShow = document.getElementById("CheckboxGroup1_1");
+			if (cbShow) {
+				cbShow.addEventListener("change", (e) => {
+					if (e.target.checked) showMe();
+				});
+			}
+
+			const cbSurprise = document.getElementById("CheckboxGroup1_2");
+			if (cbSurprise) {
+				cbSurprise.addEventListener("change", (e) => {
+					if (e.target.checked) {
+						surpriseOn();
+					} else {
+						surpriseOff();
+					}
+				});
+			}
+		});
+
+	
+		// Exercise 3
+		function carChanged() {
+			const select = document.getElementById("mySelect");
+			const img = document.getElementById("carimage");
+			if (!select || !img) return;
+
+			const choice = (select.value || "").trim();
+			alert("You selected: " + choice);
+
+			const carImages = {
+				"BMW": "https://commons.wikimedia.org/wiki/Special:FilePath/White%20BMW%20car%20seen%20from%20front.jpg",
+				"Audi": "https://commons.wikimedia.org/wiki/Special:FilePath/Audi%20A4%20S-Line.jpg",
+				"Mersu": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes%20Benz%20220%20%28W115%29.jpg",
+				"Volvo": "https://commons.wikimedia.org/wiki/Special:FilePath/Volvo%20S70.jpg"
+			};
+
+			if (carImages[choice]) {
+				img.src = carImages[choice];
+				img.alt = choice + " image";
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const img = document.getElementById("carimage");
+			if (img) {
+				img.addEventListener("mouseenter", () => {
+					img.style.border = "6px solid #ff0088";
+					img.style.borderRadius = "8px";
+				});
+				img.addEventListener("mouseleave", () => {
+					img.style.border = "none";
+				});
+			}
+
+			const select = document.getElementById("mySelect");
+			if (select) {
+				select.addEventListener("change", carChanged);
+			}
+		});
+
+
+		// Exercise 4: Moving things around
+		function ex4Status(msg) {
+			const el = document.getElementById("ex4status");
+			if (el) el.textContent = msg;
+		}
+
+		function pxToNum(v) {
+			const n = parseFloat(String(v || "0").replace("px",""));
+			return Number.isFinite(n) ? n : 0;
+		}
+
+		function getCarEl() {
+		
+			const el = document.getElementById("carimage");
+			if (!el) return null;
+
+			// Make sure the element can be moved with left/top
+			const computed = window.getComputedStyle(el);
+			if (computed.position === "static") {
+				el.style.position = "relative";
+			}
+
+			// Initialize left/top if not set
+			if (!el.style.left) el.style.left = "0px";
+			if (!el.style.top) el.style.top = "0px";
+			if (!el.style.opacity) el.style.opacity = "1";
+
+			return el;
+		}
+
+		// Move
+		function changePosition() {
+			const el = getCarEl();
+			if (!el) return;
+
+			const curLeft = pxToNum(el.style.left);
+			const curTop = pxToNum(el.style.top);
+
+			el.style.left = (curLeft - 200) + "px";
+			el.style.top = (curTop + 500) + "px";
+
+			ex4Status("Moved: left -200px, top +500px");
+		}
+
+		// Animate
+		let ex4Pos = 0;
+		let ex4Dir = 1; // 1 right, -1 left
+		function doMove() {
+			const el = getCarEl();
+			if (!el) return;
+
+			const step = 10; // pixels per tick; interval is defined in HTML
+			ex4Pos += ex4Dir * step;
+
+			const rect = el.getBoundingClientRect();
+			const maxX = Math.max(0, window.innerWidth - rect.width - 20);
+
+			if (ex4Pos >= maxX) { ex4Pos = maxX; ex4Dir = -1; }
+			if (ex4Pos <= 0) { ex4Pos = 0; ex4Dir = 1; }
+
+			el.style.left = ex4Pos + "px";
+			ex4Status("Animating… x=" + ex4Pos + "px");
+		}
+
+		// Fade out
+		let ex4Opacity = 1.0;
+		function fadeOut() {
+			const el = getCarEl();
+			if (!el) return;
+
+			ex4Opacity -= 0.03;
+			if (ex4Opacity < 0) ex4Opacity = 0;
+
+			el.style.opacity = String(ex4Opacity);
+			ex4Status("Fading… opacity=" + ex4Opacity.toFixed(2));
+		}
+
+		// Disappear
+		function remove() {
+			const el = document.getElementById("carimage");
+			if (el) {
+				el.remove();
+				ex4Status("Removed #carimage from the page");
+			}
+		}
+
+		// Exercise 5: Tables
+		function insertRows() {
+			const table = document.getElementById("data");
+			if (!table) return;
+
+			const tbody = table.querySelector("tbody") || table.appendChild(document.createElement("tbody"));
+
+			const nameInput = document.getElementById("textfield");
+			const posInput = document.getElementById("textfield2");
+			const salInput = document.getElementById("textfield3");
+
+			// Read values from inputs; if all empty, use preset example values
+			let name = (nameInput?.value || "").trim();
+			let position = (posInput?.value || "").trim();
+			let salary = (salInput?.value || "").trim();
+
+			if (!name && !position && !salary) {
+				// preset values
+				name = "New Employee";
+				position = "Intern";
+				salary = "$0";
+			}
+
+			// Basic validation: require at least Name and Position
+			if (!name || !position) {
+				alert("Please enter at least Name and Position (or leave all fields empty to insert preset values).");
+				return;
+			}
+
+			const tr = document.createElement("tr");
+
+			const tdName = document.createElement("td");
+			tdName.textContent = name;
+
+			const tdPos = document.createElement("td");
+			tdPos.textContent = position;
+
+			const tdSal = document.createElement("td");
+			tdSal.textContent = salary || "-";
+
+			tr.appendChild(tdName);
+			tr.appendChild(tdPos);
+			tr.appendChild(tdSal);
+
+			tbody.appendChild(tr);
+
+			// Clear inputs after insert
+			if (nameInput) nameInput.value = "";
+			if (posInput) posInput.value = "";
+			if (salInput) salInput.value = "";
+		}
+
+</script>
+
+	</body>
+</html>
