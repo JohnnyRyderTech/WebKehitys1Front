@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metal Quiz Challenge</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="main-header">
+      <h1>Metal Quiz Challenge</h1>
+      <p>Testaa tietosi metallimusiikista ja suorita lopuksi drag and drop -haaste.</p>
+    </header>
+
+    <!-- Aloitusnäkymä -->
+    <section id="start-screen" class="screen active">
+      <h2>Tervetuloa peliin</h2>
+      <p>
+        Vastaa metallimusiikkiaiheisiin kysymyksiin ja tee lopuksi tehtävä.
+        Saat pisteitä oikeista vastauksista.
+      </p>
+      <br>
+      <button id="start-btn" class="btn">Aloita Metal Quiz</button>
+    </section>
+
+    <!-- Quiz-näkymä -->
+    <section id="quiz-screen" class="screen">
+      <div class="top-bar">
+      <p id="question-counter">Kysymys 1 / 5</p>
+      <p id="score-display">Pisteet: 0</p>
+      <p id="timer-display">Aikaa: 15</p>
+      </div>
+
+      <div class="quiz-card">
+      <h2 id="question-text">Kysymys tulee tähän</h2>
+      <img id="question-image" class="question-image hidden" src="" alt="Kysymykseen liittyvä kuva">
+      <div id="answer-buttons" class="answer-buttons"></div>
+      <p id="feedback" class="feedback"></p>
+      <button id="next-btn" class="btn hidden">Seuraava kysymys</button>
+</div>
+    </section>
+
+    <!-- Drag and drop -näkymä -->
+    <section id="drag-screen" class="screen">
+      <h2>Drag and Drop -haaste</h2>
+      <p class="instruction">
+        Raahaa metallin alagenret oikeiden kuvausten kohdalle.
+      </p>
+
+      <div class="drag-drop-wrapper">
+        <div class="drag-items">
+          <h3>Raahattavat termit</h3>
+          <div id="drag-container">
+            <div class="drag-item" draggable="true" id="heavy">Heavy metal</div>
+            <div class="drag-item" draggable="true" id="thrash">Thrash metal</div>
+            <div class="drag-item" draggable="true" id="symphonic">Symphonic metal</div>
+          </div>
+        </div>
+
+        <div class="drop-zones">
+          <h3>Pudota oikeaan kohtaan</h3>
+
+          <div class="drop-row">
+            <p>Perinteinen raskas metallityyli</p>
+            <div class="drop-zone" data-match="heavy"></div>
+          </div>
+
+          <div class="drop-row">
+            <p>Nopea ja aggressiivinen tyyli</p>
+            <div class="drop-zone" data-match="thrash"></div>
+          </div>
+
+          <div class="drop-row">
+            <p>Melodinen ja orkesterimainen tyyli</p>
+            <div class="drop-zone" data-match="symphonic"></div>
+          </div>
+        </div>
+      </div>
+
+      <p id="drag-feedback" class="feedback"></p>
+      <button id="check-drag-btn" class="btn">Tarkista vastaukset</button>
+    </section>
+
+    <!-- Lopputulosnäkymä -->
+    <section id="result-screen" class="screen">
+      <h2>Peli päättyi</h2>
+      <p id="final-score">Sait 0 / 8 pistettä</p>
+      <p id="result-message"></p>
+      <button id="restart-btn" class="btn">Pelaa uudelleen</button>
+    </section>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
