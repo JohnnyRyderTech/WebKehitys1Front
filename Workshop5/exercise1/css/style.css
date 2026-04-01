@@ -1,0 +1,10 @@
+/* Korostaa virheelliset kentät punaisella reunalla */
+.error {
+    border: 2px solid red;
+}
+
+/* Virheilmoitusteksti */
+.error-message {
+    color: red;
+    font-size: 12px;
+}

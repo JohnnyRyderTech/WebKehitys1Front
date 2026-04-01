@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Create Your Membership</h1>
+        <p>
+            Complete this form to calculate your membership.
+            There's a 20% discount if you enroll for more than 2 years!
+        </p>
+
+        <form id="membershipForm">
+            <div class="form-row">
+                <label for="membershipType">Type</label>
+                <select id="membershipType" name="membershipType">
+                    <option value="10">Basic - €10.00</option>
+                    <option value="15">Premium - €15.00</option>
+                    <option value="20">Gold - €20.00</option>
+                    <option value="25">Platinum - €25.00</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="years">Years</label>
+                <input type="number" id="years" name="years" min="1" value="1">
+            </div>
+
+            <div class="form-row">
+                <label for="cost">Cost</label>
+                <input type="text" id="cost" name="cost" readonly>
+            </div>
+
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
