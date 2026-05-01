@@ -29,22 +29,11 @@ Main methods:
 
 ## How to use
 
-1. Create a free Last.fm API account: https://www.last.fm/api/account/create
-2. Copy your API key.
-3. Open `script.js`.
-4. Replace this line:
+1. Open `index.html` in the browser.
+2. Choose an artist from the dropdown or write your own artist name in the search field.
+3. The app fetches live album data from Last.fm and displays album information on the page.
 
-```js
-const API_KEY = "YOUR_LASTFM_API_KEY_HERE";
-```
-
-with your own key:
-
-```js
-const API_KEY = "your_api_key_here";
-```
-
-5. Open `index.html` in the browser.
+The Last.fm API key has already been added to `script.js`. The shared secret is not used here because this is a frontend browser project, and secrets should not be exposed in client-side code.
 
 ## Deployment
 

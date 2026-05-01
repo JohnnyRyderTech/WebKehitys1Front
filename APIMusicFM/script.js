@@ -1,5 +1,4 @@
-// Last.fm requires a free API key. Create one here: https://www.last.fm/api/account/create
-const API_KEY = "YOUR_LASTFM_API_KEY_HERE";
+const API_KEY = "19f1b60e197d16c5d0edd9cc0fede1d3";
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/";
 
 const artistSelect = document.querySelector("#artistSelect");
@@ -31,11 +30,6 @@ function handleSearch(event) {
 }
 
 async function fetchArtistAlbums(artistName) {
-  if (API_KEY === "YOUR_LASTFM_API_KEY_HERE") {
-    showMessage("Add your Last.fm API key to script.js before using the app.");
-    return;
-  }
-
   setLoadingState(artistName);
 
   try {
