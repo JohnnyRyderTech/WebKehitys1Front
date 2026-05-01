@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieFinder | AJAX + REST API</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">AJAX + REST API + Native JavaScript</p>
+        <h1>MovieFinder</h1>
+        <p class="hero-text">
+          Hae elokuvia ja sarjoja TMDB-rajapinnasta ilman ulkoisia JS-kirjastoja.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="search-panel" aria-label="Hakupaneeli">
+        <form id="searchForm" class="search-form" novalidate>
+          <div class="field-group">
+            <label for="query">Hakusana</label>
+            <input
+              id="query"
+              name="query"
+              type="text"
+              placeholder="Esim. Inception"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="mediaType">Tyyppi</label>
+            <select id="mediaType" name="mediaType">
+              <option value="movie">Elokuvat</option>
+              <option value="tv">TV-sarjat</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="year">Vuosi (valinnainen)</label>
+            <input
+              id="year"
+              name="year"
+              type="number"
+              min="1900"
+              max="2100"
+              placeholder="Esim. 2010"
+            />
+          </div>
+
+          <button type="submit" class="btn">Hae</button>
+        </form>
+
+        <div id="status" class="status" aria-live="polite">
+          Kirjoita hakusana ja hae sisältöä.
+        </div>
+      </section>
+
+      <section>
+        <div class="toolbar">
+          <h2>Hakutulokset</h2>
+          <p id="resultMeta" class="result-meta"></p>
+        </div>
+        <div id="results" class="results-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div id="modalRoot"></div>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
