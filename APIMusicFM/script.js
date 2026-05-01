@@ -8,7 +8,7 @@ const albumGrid = document.querySelector("#albumGrid");
 const artistTitle = document.querySelector("#artistTitle");
 const statusText = document.querySelector("#statusText");
 
-// All event handlers are added dynamically with JavaScript.
+// Kaikki tapahtumankäsittelijät lisätään dynaamisesti JavaScriptin avulla.
 document.addEventListener("DOMContentLoaded", () => {
   artistSelect.addEventListener("change", () => fetchArtistAlbums(artistSelect.value));
   searchForm.addEventListener("submit", handleSearch);
@@ -33,7 +33,7 @@ async function fetchArtistAlbums(artistName) {
   setLoadingState(artistName);
 
   try {
-    // AJAX request 1: fetch top albums for the selected/searched artist.
+    // AJAX request 1: hae haetun artistin suosituimmat albumit.
     const albumsUrl = buildUrl({
       method: "artist.gettopalbums",
       artist: artistName,
@@ -56,7 +56,7 @@ async function fetchArtistAlbums(artistName) {
       return;
     }
 
-    // AJAX requests 2: fetch extra album info and tracklists for each album.
+    // AJAX requests 2: hakea lisätietoja albumista ja kappalelistoja kullekin albumille.
     const albumsWithDetails = await Promise.all(
       albums.map((album) => fetchAlbumInfo(artistName, album))
     );
@@ -90,7 +90,7 @@ async function fetchAlbumInfo(artistName, album) {
       tracks: getTracks(data.album?.tracks?.track)
     };
   } catch (error) {
-    // If one album detail request fails, still show the basic album card.
+    // Jos yhden albumin tietopyyntö epäonnistuu, näytä silti albumin perustiedot.
     return {
       name: album.name,
       artist: album.artist?.name || artistName,
